@@ -30,6 +30,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('dashboard_assets') }}/assets/images/neptune.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('dashboard_assets') }}/assets/images/neptune.png" />
 
+    {{-- summer note  --}}
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -83,14 +90,14 @@
 
                         </ul>
                     </li>
-                    <li class="{{ (\Request::route()->getName() == 'blog'|| 'blog.create') ? 'active-page' : '' }}">
+                    <li class="{{ (\Request::route()->getName() == 'blog'|| 'blog.view.create') ? 'active-page' : '' }}">
                         <a href=""><i class="  material-icons-two-tone">description</i>Blogs<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
                         <ul class="sub-menu">
                             <li>
                                 <a href="{{ route('blog') }}">Blog List</a>
                             </li>
                             <li>
-                                <a href="{{ route('blog.create') }}">Blog Insert</a>
+                                <a href="{{ route('blog.view.create') }}">Blog Insert</a>
                             </li>
 
                         </ul>
@@ -200,7 +207,7 @@
     </div>
 
     <!-- Javascripts -->
-    <script src="{{ asset('dashboard_assets') }}/assets/plugins/jquery/jquery-3.5.1.min.js"></script>
+    {{-- <script src="{{ asset('dashboard_assets') }}/assets/plugins/jquery/jquery-3.5.1.min.js"></script> --}}
     <script src="{{ asset('dashboard_assets') }}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="{{ asset('dashboard_assets') }}/assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
     <script src="{{ asset('dashboard_assets') }}/assets/plugins/pace/pace.min.js"></script>

@@ -50,6 +50,7 @@ Route::post('/tag/forced_delete/{id}',[TagController::class,'forced_delete'])->n
 
 // blog route
 Route::get('/blog',[BlogController::class,'index'])->name('blog');
-Route::get('/blog/create',[BlogController::class,'blog_create'])->name('blog.create');
+Route::get('/blog/create',[BlogController::class,'view_create'])->name('blog.view.create');
+Route::post('/blog/create/post',[BlogController::class,'create'])->name('blog.create');
 
 
