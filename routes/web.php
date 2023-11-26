@@ -48,9 +48,13 @@ Route::post('/tag/status_change/{id}',[TagController::class,'status_change'])->n
 Route::post('/tag/restore/{id}',[TagController::class,'restore'])->name('tag.restore');
 Route::post('/tag/forced_delete/{id}',[TagController::class,'forced_delete'])->name('tag.forced.delete');
 
-// blog route
-Route::get('/blog',[BlogController::class,'index'])->name('blog');
-Route::get('/blog/create',[BlogController::class,'view_create'])->name('blog.view.create');
-Route::post('/blog/create/post',[BlogController::class,'create'])->name('blog.create');
+// blog route 
+// Route::get('/blog',[BlogController::class,'index'])->name('blog');
+// Route::get('/blog/create',[BlogController::class,'view_create'])->name('blog.view.create');
+// Route::post('/blog/create/post',[BlogController::class,'create'])->name('blog.create');
+// // Route::get('/blog/edit/{id}',[BlogController::class,'view_edit'])->name('blog.view.edit');
+// Route::post('/blog/edit/post/{id}',[BlogController::class,'edit'])->name('blog.edit');
+// Route::post('/blog/delete/{id}',[BlogController::class,'delete'])->name('blog.delete');
+
 
 

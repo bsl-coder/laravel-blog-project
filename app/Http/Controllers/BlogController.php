@@ -47,5 +47,28 @@ class BlogController extends Controller
             return redirect()->route('blog')->with('blog_success','Blog insert successful');
         }
 
+
+
     }
+
+    public function delete($id){
+        Blog::find($id)->delete();
+        return back()->with('blog_success','Category delete successful');
+
+    }
+
+    public function edit(Request $request,$id){
+        $request->validate([
+            'title' => 'required',
+        ]);
+
+        Blog::find($id)->update([
+            'title' => $request->title,
+        ]);
+
+        return back()->with('tag_success','Tag Update successful');
+
+    }
+
+
 }

@@ -56,41 +56,31 @@
                                 </form>
                             </td>
                           </tr>
-                          <!-- Modal -->
-                            <div class="modal fade" id="categoryEdit{{$category->id}}" tabindex="-1" aria-labelledby="categoryEditLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Category Update</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          {{-- Modal  --}}
+                        <div class="modal fade" id="categoryEdit{{$category->id}}" tabindex="-1" aria-labelledby="categoryEditLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Category Update</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="{{ route('category.edit',$category->id) }}" method="post" enctype="multipart/form-data">
+                                    <div class="modal-body">
+                                        @csrf
+                                        <div class="">
+                                          <label  class="form-label">Category Title</label>
+                                          <input type="text"  class="form-control  " name="title" value="{{$category->title}}" >
+                                        </div>
                                     </div>
-                                    <form action="{{ route('category.edit',$category->id) }}" method="post" enctype="multipart/form-data">
-                                        <div class="modal-body">
-                                            @csrf
-                                            <div class="mb-3">
-                                              <label  class="form-label">Category Title</label>
-                                              <input type="text"  class="form-control  " name="title" value="{{$category->title}}" >
-                                            </div>
-                                            <div class="mb-3">
-                                              <label  class="form-label">Category Slug</label>
-                                              <input type="text"  class="form-control  " name="slug" value="{{$category->slug}}" >
-                                            </div>
-                                            <div class="mb-3">
-                                                <label  class="form-label   ">Category Image</label><br>
-                                                <img class="img-fluid img-thumbnail" style="width: 150px"  src="{{ asset('uploads/category') }}/{{ $category->image }}" alt="">
-                                            </div>
-                                            <div class=" ">
-                                              <input type="file"  class="form-control  " name="image" >
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger " data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Save changes</button>
-                                        </div>
-                                    </form>
-                                </div>
-                                </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger " data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </form>
                             </div>
+                            </div>
+                        </div>
+                        {{-- Modal end  --}}
                         @endforeach
                     </tbody>
                     {{ $categories->links() }}

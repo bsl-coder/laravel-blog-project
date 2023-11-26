@@ -9,6 +9,8 @@ class Blog extends Model
 {
     use HasFactory;
 
+    protected $guarded = [''];
+
     public function RelationwithUser(){
         return $this->hasOne(User::class, 'id', 'user_id');
     }
